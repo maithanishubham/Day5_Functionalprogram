@@ -3,12 +3,25 @@ import java.util.Scanner;
 public class functionalprogs {
 	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-	    System.out.print("Enter a value of Number1:");
-	    int num1 = sc.nextInt();
-	    System.out.print("Enter a value of Number2:");
-	    int num2 = sc.nextInt();
-	    double distance = Math.sqrt(Math.pow(num1, 2) + Math.pow(num2, 2));
-	    System.out.println(distance);
-	}
+		
+		 Scanner scanner = new Scanner(System.in);
+	        System.out.print("Enter the value of a: ");
+	        double a = scanner.nextDouble();
+	        System.out.print("Enter the value of b: ");
+	        double b = scanner.nextDouble();
+	        System.out.print("Enter the value of c: ");
+	        double c = scanner.nextDouble();
+	        double delta = Math.pow(b, 2) - 4.0 * a * c;
+
+	        if (delta > 0.0) {
+	            double root1 = (-b + Math.sqrt(delta)) / (2.0 * a);
+	            double root2 = (-b - Math.sqrt(delta)) / (2.0 * a);
+	            System.out.println("The roots are " + root1 + " and " + root2);
+	        } else if (delta == 0.0) {
+	            double root1 = -b / (2.0 * a);
+	            System.out.println("The root is " + root1);
+	        } else {
+	            System.out.println("Roots are not real.");
+	        }
+	    }
 }
