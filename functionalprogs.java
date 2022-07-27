@@ -4,24 +4,19 @@ public class functionalprogs {
 	
 	public static void main(String[] args) {
 		
-		 Scanner scanner = new Scanner(System.in);
-	        System.out.print("Enter the value of a: ");
-	        double a = scanner.nextDouble();
-	        System.out.print("Enter the value of b: ");
-	        double b = scanner.nextDouble();
-	        System.out.print("Enter the value of c: ");
-	        double c = scanner.nextDouble();
-	        double delta = Math.pow(b, 2) - 4.0 * a * c;
+		Scanner sc = new Scanner(System.in);
+	    System.out.println("Enter temperature in Fahrenheit: ");
+	    double temperature = sc.nextDouble();
+	    System.out.println("Enter wind speed in miles per hour: ");
+	    double windSpeed = sc.nextDouble();
 
-	        if (delta > 0.0) {
-	            double root1 = (-b + Math.sqrt(delta)) / (2.0 * a);
-	            double root2 = (-b - Math.sqrt(delta)) / (2.0 * a);
-	            System.out.println("The roots are " + root1 + " and " + root2);
-	        } else if (delta == 0.0) {
-	            double root1 = -b / (2.0 * a);
-	            System.out.println("The root is " + root1);
-	        } else {
-	            System.out.println("Roots are not real.");
-	        }
-	    }
+	    if (temperature < 50 && windSpeed < 120 && windSpeed > 3) {
+	        double windChill = 35.74 + 0.6215 * temperature + (0.4275 * temperature - 35.75) * Math.pow(windSpeed, 0.16);
+	        System.out.println("Temperature = " + temperature + " Fahrenheit");
+	        System.out.println("Wind speed  = " + windSpeed + " miles/hr");
+	        System.out.println("Wind chill  = " + windChill + " Fahrenheit");
+	    } else {
+	        System.out.println("Please enter valid values.");
+	   }
+	}
 }
